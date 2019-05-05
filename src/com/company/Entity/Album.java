@@ -1,13 +1,16 @@
-package com.company;
+package com.company.Entity;
+import com.company.Info;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Album implements Info {
-    private Song[] songs = new Song[20];
+    private ArrayList<Song> songs = new ArrayList<Song>();
     private int numberOfSongs = 0;
     private String name;
     private String releaseDate;
     private String genre;
 
-    public Song[] getSongs() {
+    public ArrayList<Song> getSongs() {
         return songs;
     }
 
@@ -15,7 +18,7 @@ public class Album implements Info {
         return numberOfSongs;
     }
 
-    public void setSongs(Song[] songs) {
+    public void setSongs(ArrayList<Song> songs) {
         this.songs = songs;
     }
 
@@ -29,15 +32,14 @@ public class Album implements Info {
         }
         else{
             Scanner scanner = new Scanner(System.in);
-            for(int i = numberOfSongs; i<numberOfSongs+numberOfNewSongs;i++){
-                System.out.println(i);
+            for(int it = 0;it< numberOfNewSongs;it++){
                 System.out.println("Introduce numele, genul si durata cantecului(in secunde)");
                 String songName = scanner.nextLine();
                 String genre = scanner.nextLine();
                 int duration = scanner.nextInt();
                 scanner.nextLine();
                 Song newSong = new Song(songName,genre,duration);
-                songs[i] = newSong;
+                songs.add(newSong);
             }
             numberOfSongs = numberOfSongs + numberOfNewSongs;
         }

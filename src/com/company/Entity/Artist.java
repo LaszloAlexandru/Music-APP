@@ -1,11 +1,21 @@
-package com.company;
+package com.company.Entity;
 
-public class Artist extends Person{
-    private Album[] albums = new Album[100];
-    private Single[] singles = new Single[100];
+import java.util.ArrayList;
+
+public class Artist extends Person {
+    private ArrayList<Album> albums = new ArrayList<Album>();
+    private ArrayList<Single> singles = new ArrayList<Single>();
     private String stageName;
     private int albumNumber = 0;
     private int singlesNumber = 0;
+
+    public void setAlbums(ArrayList<Album> albums) {
+        this.albums = albums;
+    }
+
+    public void setSingles(ArrayList<Single> singles) {
+        this.singles = singles;
+    }
 
     public int getAlbumNumber() {
         return albumNumber;
@@ -15,7 +25,7 @@ public class Artist extends Person{
         return singlesNumber;
     }
 
-    public Artist (String newStageName, String newName, String newEmail, int newCNP){
+    public Artist (String newName, String newStageName, String newEmail, int newCNP){
         this.stageName = newStageName;
         this.name = newName;
         this.eMail = newEmail;
@@ -23,16 +33,16 @@ public class Artist extends Person{
     }
 
     public void addSingle (Single newSingle) {
-        singles[singlesNumber] = newSingle;
+        singles.add(newSingle);
         singlesNumber++;
     }
 
-    public Album[] getAlbums() {
+    public ArrayList<Album> getAlbums() {
         return albums;
     }
 
     public void addAlbums(Album newAlbum) {
-        albums[albumNumber] = newAlbum;
+        albums.add(newAlbum);
         albumNumber++;
     }
 
@@ -40,7 +50,7 @@ public class Artist extends Person{
         return stageName;
     }
 
-    public Single[] getSingles() {
+    public ArrayList<Single> getSingles() {
         return singles;
     }
 

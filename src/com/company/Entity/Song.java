@@ -1,6 +1,8 @@
-package com.company;
+package com.company.Entity;
 
-public class Song implements Info{
+import com.company.Info;
+
+public class Song implements Info {
 
     private String genre;
     private String name;

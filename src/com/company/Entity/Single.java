@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Entity;
 
 public class Single extends Song {
 

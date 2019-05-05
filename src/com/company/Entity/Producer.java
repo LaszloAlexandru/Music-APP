@@ -1,9 +1,11 @@
-package com.company;
+package com.company.Entity;
+
+import java.util.ArrayList;
 
 public class Producer extends Person {
 
     private String companyName;
-    private Artist[] artists = new Artist[50];
+    private ArrayList<Artist> artists = new ArrayList<Artist>();
     private int artistNumber= 0;
 
     public Producer () {}
@@ -15,7 +17,7 @@ public class Producer extends Person {
     }
 
     public void addArtist (Artist newArtist){
-        artists[artistNumber] = newArtist;
+        artists.add(newArtist);
         artistNumber++;
     }
 
@@ -27,7 +29,7 @@ public class Producer extends Person {
         return companyName;
     }
 
-    public Artist[] getArtists() {
+    public ArrayList<Artist> getArtists() {
         return artists;
     }
 
